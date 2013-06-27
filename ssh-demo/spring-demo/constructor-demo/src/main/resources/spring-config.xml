@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="stoneAxe" class="ssh.spring.service.impl.StoneAxe"/>
+    <bean id="steelAxe" class="ssh.spring.service.impl.SteelAxe"/>
+
+    <bean id="person01" class="ssh.spring.service.impl.Chinese">
+        <constructor-arg ref="stoneAxe"/>
+    </bean>
+
+    <bean id="person02" class="ssh.spring.service.impl.Chinese">
+        <property name="axe" ref="steelAxe"/>
+    </bean>
+
+    <bean id="person03" class="ssh.spring.service.impl.Chinese">
+        <property name="axe">
+            <ref local="stoneAxe"/>
+        </property>
+    </bean>
+
+    <bean id="person04" class="ssh.spring.service.impl.Chinese">
+        <property name="axe">
+            <bean class="ssh.spring.service.impl.SteelAxe"/>
+        </property>
+    </bean>
+
+</beans>
