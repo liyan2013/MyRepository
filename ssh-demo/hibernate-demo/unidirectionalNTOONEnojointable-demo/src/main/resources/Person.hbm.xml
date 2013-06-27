@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ssh.hibernate.domain">
+    <class name="Person" table="person_inf">
+        <id name="id" column="person_id">
+            <generator class="identity"/>
+        </id>
+        <property name="name" column="person_name" type="string"/>
+        <property name="age" column="person_age" type="int"/>
+        <many-to-one name="address" cascade="all" class="Address" column="address_id"/>
+    </class>
+</hibernate-mapping>
