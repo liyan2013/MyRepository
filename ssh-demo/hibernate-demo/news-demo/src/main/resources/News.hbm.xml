@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="ssh.hibernate.domain">
+    <class name="News" table="news_table">
+        <id name="id">
+            <generator class="identity"/>
+        </id>
+        <property name="title"/>
+        <property name="content"/>
+        <property name="fullContent" formula="(select concat(nt.title, nt.content) from news_table nt where nt.id=id)"/>
+    </class>
+</hibernate-mapping>
