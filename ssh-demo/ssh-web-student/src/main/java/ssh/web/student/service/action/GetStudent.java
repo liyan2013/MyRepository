@@ -1,5 +1,7 @@
 package ssh.web.student.service.action;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 /**
  * Created with IntelliJ IDEA.
  * User: liyanwang
@@ -7,5 +9,20 @@ package ssh.web.student.service.action;
  * Time: 6:17 PM
  * To change this template use File | Settings | File Templates.
  */
-public class GetStudent {
+public class GetStudent extends ActionSupport {
+
+    private String stuName;
+
+    public String getStuName() {
+        return stuName;
+    }
+
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
+    }
+
+    @Override
+    public String execute() throws Exception {
+        return SUCCESS;
+    }
 }

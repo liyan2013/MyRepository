@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
     <title>Delete Student</title>
@@ -13,6 +14,11 @@
 <body>
 
     <p><h1>Delete Student</h1></p>
+
+    <s:form action="delete">
+        <s:textfield name="stuName" label="Name"/>
+        <s:submit value="Delete"/>
+    </s:form>
 
 </body>
 </html>

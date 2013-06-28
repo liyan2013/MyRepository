@@ -6,12 +6,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
     <title>Get Student</title>
 </head>
 <body>
 <p><h1>Get Student</h1></p>
+
+<s:form action="get">
+    <s:textfield name="stuName" label="Name"/>
+    <s:submit value="Get"/>
+</s:form>
 
 </body>
 </html>

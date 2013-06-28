@@ -6,4 +6,28 @@
 
 <struts>
 
+    <!--constant name="struts.custom.i18n.resources" value="message"/-->
+    <constant name="struts.i18n.encoding" value="GBK"/>
+    <package name="ssh.web.student.service.action" extends="struts-default">
+        <action name="post" class="ssh.web.student.service.action.PostStudent">
+            <result name="input">/stu/post.jsp</result>
+            <result name="error">/stu/error.jsp</result>
+            <result name="success">/stu/success.jsp</result>
+        </action>
+        <action name="get" class="ssh.web.student.service.action.GetStudent">
+            <result name="input">/stu/get.jsp</result>
+            <result name="error">/stu/error.jsp</result>
+            <result name="success">/stu/success.jsp</result>
+        </action>
+        <action name="put" class="ssh.web.student.service.action.PutStudent">
+            <result name="input">/stu/put.jsp</result>
+            <result name="error">/stu/error.jsp</result>
+            <result name="success">/stu/success.jsp</result>
+        </action>
+        <action name="delete" class="ssh.web.student.service.action.DeleteStudent">
+            <result name="input">/stu/delete.jsp</result>
+            <result name="error">/stu/error.jsp</result>
+            <result name="success">/stu/success.jsp</result>
+        </action>
+    </package>
 </struts>
