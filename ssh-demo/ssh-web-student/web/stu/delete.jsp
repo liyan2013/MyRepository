@@ -16,7 +16,7 @@
     <p><h1>Delete Student</h1></p>
 
     <s:form action="delete">
-        <s:textfield name="stuName" label="Name"/>
+        <s:textfield name="id" label="Id"/>
         <s:submit value="Delete"/>
     </s:form>
 

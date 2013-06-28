@@ -15,7 +15,7 @@
 <p><h1>Get Student</h1></p>
 
 <s:form action="get">
-    <s:textfield name="stuName" label="Name"/>
+    <s:textfield name="id" label="Id"/>
     <s:submit value="Get"/>
 </s:form>
 

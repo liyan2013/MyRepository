@@ -1,6 +1,9 @@
 package ssh.web.student.service.action;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import ssh.web.student.service.dao.impl.StudentDAOService;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,18 +14,28 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class DeleteStudent extends ActionSupport{
 
-    private String stuName;
+    private static Log log = LogFactory.getLog(DeleteStudent.class);
 
-    public String getStuName() {
-        return stuName;
+    private Integer id;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setStuName(String stuName) {
-        this.stuName = stuName;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Override
     public String execute() throws Exception {
-        return ERROR;
+
+        try {
+            log.info("Delete Student: " + id);
+            StudentDAOService.getInstance().delete(id);
+        }catch (Exception e){
+            e.printStackTrace();
+            return ERROR;
+        }
+        return SUCCESS;
     }
 }

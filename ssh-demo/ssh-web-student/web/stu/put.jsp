@@ -15,6 +15,7 @@
 <p><h1>Put Student</h1></p>
 
 <s:form action="put">
+    <s:textfield name="id" label="Id"/>
     <s:textfield name="stuName" label="Name"/>
     <s:textfield name="age" label="Age"/>
     <s:submit value="Put"/>
